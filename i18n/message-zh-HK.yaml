@@ -1,0 +1,385 @@
+menu:
+  main:
+    group-app: ${defaults.base.name}
+    about: 關於 ${defaults.base.name}
+    preferences: 偏好設置...
+    services: 服務
+    hide: 隱藏 ${defaults.base.name}
+    hideothers: 隱藏其他
+    unhide: 全部顯示
+    quit.darwin: 退出 ${defaults.base.name}
+    quit: 關閉所有窗口
+    group-file: 文件
+    new-file: 新建文檔
+    new-file-from-clipboard: 從剪貼板新建文檔
+    new-folder: 新建文件夾
+    group-new-library: 新建庫
+    new-library: 文檔庫
+    new-library-from-external-folder.darwin: 鏈接到外部文件夾 (比如 iCloud, Dropbox 等)...
+    new-library-from-external-folder.win32: 鏈接到外部文件夾 (比如 OneDrive, Dropbox 等)...
+    new-library-from-blog: 鏈接到博客項目文件夾 (比如 Jekyll, Hexo 等)...
+    new-library-from-book: 鏈接到電子書項目文件夾 (比如 GitBook)...
+    open-tab-in-new-window: 在新窗口中打開
+    take-snapshot: 保存快照
+    restore: 恢復內容到初始狀態
+    statistics: 統計信息...
+    close-current-tab: 關閉
+    new-window: 新建窗口
+    close: 關閉窗口
+    open-external-file: 打開外部文檔
+    new-external-file: 新建外部文檔
+    clear-recent: 清除最近列表
+    import: 導入...
+    export: 導出...
+    group-edit: 編輯
+    undo: 撤銷
+    redo: 重做
+    cut: 剪切
+    copy.win32: 複製
+    copy.darwin: 拷貝
+    paste: 粘貼
+    paste-as-text: 粘貼為純文本
+    paste-from-wechat-subscription-post: 粘貼自微信訂閲號文章 (*)
+    copy-as-html.win32: 複製為 HTML
+    copy-as-html.darwin: 拷貝為 HTML
+    copy-as-plain-text.win32: 複製為純文本
+    copy-as-plain-text.darwin: 拷貝為純文本
+    copy-as-wechat-subscription-post.win32: 複製為微信訂閲號文章格式
+    copy-as-wechat-subscription-post.darwin: 拷貝為微信訂閲號文章格式
+    select-all: 全選
+    find: 查找
+    find-files: 在文件中查找
+    find-next: 查找下一個
+    find-previous: 查找上一個
+    go-line: 跳到行...
+    go-previous-line: 返回上一行 (*)
+    move-line-up: 向上移動一行
+    move-line-down: 向下移動一行
+    delete-line: 刪除選定行
+    toggle-bookmark: 添加/刪除書籤 (*)
+    go-and-delete-previous-bookmark: 跳到並刪除最後一個書籤 (*)
+    go-previous-bookmark: 跳到上一個書籤 (*)
+    go-next-bookmark: 跳到下一個書籤 (*)
+    new-file-selected-text: 以選定的內容新建文檔 (*)
+    split-file-current-position: 在當前位置分割文檔 (*)
+    group-format: 格式
+    strong: 粗體
+    emphasis: 斜體
+    underline: 下劃線
+    strikethrough: 刪除線
+    mark: 高亮
+    code: 行內代碼
+    heading1: 標題 1
+    heading2: 標題 2
+    heading3: 標題 3
+    heading4: 標題 4
+    auto-heading: 自動標題 (Alt+Enter)
+    clear-heading: 清除標題
+    indent: 提升標題級別 (Tab)
+    reserve-indent: 降低標題級別 (Shift+Tab)
+    link: 鏈接
+    image: 圖像
+    list-item: 列表項目
+    ordered-list-item: 有序列表項目
+    task-item: 任務列表項目
+    change-task-item-state: 改變任務列表項目完成狀態
+    clear-format: 清除格式
+    beautify: 美化文檔
+    group-insert: 插入
+    insert-link: 鏈接
+    insert-media: 圖像
+    insert-task-list: 任務列表
+    insert-footnote: 腳註
+    toc: 目錄
+    hr: 分隔線
+    blockquote: 引言
+    insert-table: 表格
+    insert-chart: 圖表
+    insert-code: 代碼塊
+    insert-equation: LaTeX 數學公式
+    group-view.darwin: 顯示
+    group-view: 查看
+    toggle-library: 顯示/隱藏 文檔庫
+    toggle-document-list: 顯示/隱藏 文檔列表
+    toggle-toolbar: 顯示/隱藏 工具欄
+    toggle-outline: 顯示/隱藏 大綱
+    toggle-instant-view: 顯示/隱藏 即時預覽
+    toggle-read-mode: 顯示/隱藏 閲讀模式 (*)
+    toggle-preview: 顯示/隱藏 預覽
+    toggle-slides: 顯示/隱藏 幻燈片瀏覽
+    toggle-history: 顯示/隱藏 歷史記錄
+    toggle-presentation: 播放幻燈片
+    quick-open: 顯示快速打開面板
+    command-palette: 顯示命令面板
+    increase-font-size: 放大字體
+    decrease-font-size: 縮小字體
+    reset-font-size: 實際字體大小
+    toggle-distraction-free-mode: 進入專心模式
+    toggle-fullscreen: 進入全屏幕
+    group-window: 窗口
+    previous-tab: 顯示上一個標籤頁
+    next-tab: 顯示下一個標籤頁
+    tab1: 顯示第 1 個標籤頁
+    tab2: 顯示第 2 個標籤頁
+    tab3: 顯示第 3 個標籤頁
+    tab4: 顯示第 4 個標籤頁
+    minimize: 最小化
+    zoom: 縮放
+    front: 前置所有窗口
+    previous-window: 顯示上一個窗口 (*)
+    next-window: 顯示下一個窗口 (*)
+    group-help: 幫助
+    manual: 使用手冊
+    feedback: 意見反饋
+    website: 官方網站
+    group-developer: 開發者
+    devel-reload: 重新加載
+    devel-toggle-devtools: 顯示/隱藏 開發者工具
+    devel-open-library: 打開文檔庫目錄
+    devel-open-configuration: 打開配置文件目錄
+    devel-open-cache: 打開緩存目錄
+context:
+  layout:
+    toggle-library: 顯示/隱藏 文檔庫
+    toggle-document-list: 顯示/隱藏 文檔列表
+    toggle-fullscreen: 進入全屏幕
+  new-file:
+    new-file: 新建文檔
+    new-file-from-clipboard: 從剪貼板新建文檔
+    new-external-file: 新建外部文檔
+  format:
+    strong: 粗體
+    emphasis: 斜體
+    underline: 下劃線
+    strikethrough: 刪除線
+    mark: 高亮
+    code: 行內代碼
+    heading1: 標題 1
+    heading2: 標題 2
+    heading3: 標題 3
+    heading4: 標題 4
+    auto-heading: 自動標題
+    clear-heading: 清除標題
+    link: 鏈接
+    image: 圖像
+    list-item: 列表項目
+    ordered-list-item: 有序列表項目
+    task-item: 任務列表項目
+    change-task-item-state: 改變任務列表項目完成狀態
+    clear-format: 清除格式
+    beautify: 美化文檔
+  insert:
+    insert-task-list: 任務列表
+    insert-footnote: 腳註
+    toc: 目錄
+    hr: 分隔線
+    blockquote: 引言
+    insert-chart: 圖表
+    insert-code: 代碼塊
+    insert-equation: LaTeX 數學公式
+  table:
+    insert-table: 插入表格
+    insert-column: 插入列 (*)
+    move-column-to-the-left: 向左移動列 (*)
+    move-column-to-the-right: 向右移動列 (*)
+    insert-row: 插入行 (*)
+    delete-column: 刪除行 (*)
+    delete-table: 刪除表格 (*)
+    auto-adjust-columns-width: 自動調整列寬 (*)
+  view:
+    toggle-preview: 顯示/隱藏 預覽
+    toggle-slides: 顯示/隱藏 幻燈片瀏覽
+    toggle-read-mode: 顯示/隱藏 閲讀模式
+    toggle-presentation: 播放幻燈片
+    toggle-outline: 顯示/隱藏 大綱
+    toggle-instant-view: 顯示/隱藏 即時預覽
+    
+  library:
+    new-folder: 新建文件夾
+    rename-file.darwin: 重新命名
+    rename-file.win32: 重命名
+    delete-file.darwin: 移到廢紙簍
+    delete-file.win32: 移到回收站
+    import: 導入...
+    reveal-file.darwin: 在訪達中顯示
+    reveal-file.win32: 在資源管理器中顯示
+  create-library:
+    new-library: 文檔庫
+    new-library-from-external-folder.darwin: 鏈接到外部文件夾 (比如 iCloud, Dropbox 等)...
+    new-library-from-external-folder.win32: 鏈接到外部文件夾 (比如 OneDrive, Dropbox 等)...
+    new-library-from-blog: 鏈接到博客項目文件夾 (比如 Jekyll, Hexo 等)...
+    new-library-from-book: 鏈接到電子書項目文件夾 (比如 GitBook)...
+  file:
+    new-file: 新建文檔
+    new-file-from-clipboard: 從剪貼板新建文檔
+    open-file-in-new-window: 在新窗口中打開
+    pin: 設置/取消 置頂
+    tag: 設置標籤
+    note: 設置內容摘要
+    due: 設置截稿日期
+    creation-time: 設置創建時間 (*)
+    merge-file: 合併 (*)
+    cut-file: 剪切
+    copy-file.win32: 複製
+    copy-file.darwin: 拷貝
+    paste-file: 粘貼 (*)
+    select-all-files: 全選
+    rename-file.darwin: 重新命名
+    rename-file.win32: 重命名
+    delete-file.darwin: 移到廢紙簍
+    delete-file.win32: 移到回收站
+    export-file: 導出...
+    reveal-file.darwin: 在訪達中顯示
+    reveal-file.win32: 在資源管理器中顯示
+  file-sort:
+    sort-by-name: 名稱
+    sort-by-creation-time: 創建時間
+    sort-by-last-modified: 修改時間
+    order-ascending: 正序
+    order-descending: 倒序
+  tab:
+    close-selected-tab: 關閉標籤頁
+    close-other-tabs: 關閉其他標籤頁
+    close-tabs-to-the-right: 關閉右側標籤頁
+    close-all-tabs: 全部關閉
+    open-selected-tab-in-new-window: 在新窗口中打開
+    reveal-document: 在文檔庫中顯示
+  outline:
+    move-section-up: 向上移動
+    move-section-down: 向下移動
+    left-shift-section: 左縮進
+    right-shift-section: 右縮進
+    delete-section: 刪除
+  editor:
+    undo: 撤銷
+    redo: 重做
+    cut: 剪切
+    copy.win32: 複製
+    copy.darwin: 拷貝
+    paste: 粘貼
+    paste-as-text: 粘貼為純文本
+    copy-as-html.win32: 複製為 HTML
+    copy-as-html.darwin: 拷貝為 HTML
+    copy-as-plain-text.win32: 複製為純文本
+    copy-as-plain-text.darwin: 拷貝為純文本
+    copy-as-wechat-subscription-post.win32: 複製為微信訂閲號文章格式
+    copy-as-wechat-subscription-post.darwin: 拷貝為微信訂閲號文章格式
+    select-all: 全選
+    new-file-selected-text: 以選定的內容新建文檔 (*)
+    split-file-current-position: 在當前位置分割文檔 (*)
+  keymap:
+    keymap-off: 關閉
+    keymap-vim: 啟用 Vim 按鍵綁定
+    keymap-emacs: 啟用 Emacs 按鍵綁定
+  resource:
+    cut-resource: 剪切
+    copy-resource.darwin: 拷貝
+    copy-resource.win32: 複製
+    paste-resource: 粘貼 (*)
+    paste-resource-from-clipboard: 粘貼自剪貼板... (*)
+    select-all-resources: 全選
+    rename-resource.win32: 重命名
+    rename-resource.darwin: 重新命名
+    delete-resource.win32: 移到回收站
+    delete-resource.darwin: 移到廢紙簍
+    open-resource.darwin: 使用預覽打開
+    open-resource.win32: 使用外部應用程序打開
+    reveal-resource.darwin: 在訪達中顯示
+    reveal-resource.win32: 在資源管理器中顯示
+  textbox:
+    undo: 撤銷
+    redo: 重做
+    cut: 剪切
+    copy.win32: 複製
+    copy.darwin: 拷貝
+    paste: 粘貼
+    select-all: 全選
+  dock:
+    new-window: 新建窗口
+  tray:
+    save-clipboard-content-to-inbox: 保存剪貼板內容到收件箱
+    open-window: 顯示主窗口
+    quit: 退出
+main:
+  common:
+    unregister: 未註冊
+  toolbar:
+    layout: 佈局
+    quick-open: 快速打開
+    new-file: 新建文檔
+    open-external-file: 打開
+    find: 查找
+    strong: 粗體
+    emphasis: 斜體
+    underline: 下劃線
+    format: 格式
+    insert: 插入
+    insert-link: 鏈接
+    insert-media: 圖像
+    insert-table: 表格
+    view: 查看
+    toggle-read-mode: 閲讀模式(*)
+    toggle-history: 歷史記錄
+    toggle-presentation: 播放幻燈片
+    export: 導出
+    preferences.darwin: 偏好設置
+    preferences.win32: 設置
+    menu: 菜單
+  library:
+    new-library: 添加文檔庫
+  find:
+    case-sensitive: 區分大小寫
+    whole-word: 全字匹配
+    regular-expression: 使用正則表達式
+    find: 查找
+    previous: 查找上一處
+    replace: 替換
+    replace-all: 全部替換
+  status:
+    upgrade: 升級為全功能版本
+  settings:
+    general: 通用
+    editor: 編輯器
+    markdown: Markdown
+    localization: 本地化
+    group-appearance: 外觀
+    enable-transparent-background: 啟用半透明背景 (需要重啟應用程序)。
+    show-all-toolbar-button: 顯示所有工具欄按鈕。
+    show-toolbar-text: 顯示工具欄按鈕標題。
+    group-function: 功能
+    enable-tabs: 啟用標籤頁。
+    enable-tray-icon: 顯示托盤圖標。
+    enable-spell-check: 啟用拼寫檢查。
+    reopen-last-documents-on-startup: 下次啟動應用程序時自動打開最後編輯的文檔。
+    group-syntax: 語法
+    syntax-enable-ins: 啟用下劃線 (如 ++underline++)。
+    syntax-enable-mark: 啟用高亮 (如 ==highlight==)。
+    syntax-enable-footnote: 啟用腳註 (如 [^footnote-name])。
+    syntax-enable-tasklist: 啟用任務列表 (如 * [x] task item)。
+    syntax-enable-equation: 啟用 LaTeX 數學公式 (如 $$E = mc^2$$)。
+    syntax-enable-single-dollar-equation: 允許單美元符號的行內數學公式 (如 $y = x + 1$)。
+    syntax-enable-chart: 啟用圖表 (@chart 指令)。
+    syntax-enable-toc: 啟用目錄 (@toc 指令)。
+    toc-level-from: 目錄標題級別從
+    toc-level-to: 到
+    group-performance: 性能
+    enable-chart-rendering-in-instant-view: 允許在即時預覽中顯示圖表。
+    enable-equation-rendering-in-instant-view: 允許在即時預覽中顯示 LaTeX 數學公式。
+    enable-markdown-syntax-check: 允許 Markdown 語法檢查。
+    group-font: 字體
+    editor-font: 編輯器字體 (*)
+    view-font: 查看字體 (*)
+    font-size: 字體大小 (*)
+    line-height: 行高 (*)
+    group-typing: 錄入
+    vertical-center-cursor: 垂直居中光標。
+    always-show-line-number: 總是顯示行號。
+    auto-complete-markdown-symbol: 自動補完 Markdown 符號。
+    auto-complete-smart-quote: 自動替換引號為智能引號 (即 “ ” 和 ‘ ’)。
+    group-key-binding: 按鍵綁定
+    enable-emacs-key-binding: 啟用基本的 Emacs 按鍵綁定 (暫時只支持 macOS 系統)。
+    enable-vim-key-binding: 啟用基本的 Vim 按鍵綁定。(*)
+    group-cjk-auto-complete: 中日韓自動補完
+    auto-complete-cjk-surround-space: 自動在中日韓文字及英文數字間插入空格。
+    auto-complete-cjk-corner-bracket: 自動替換引號為直角引號 (即 「 」和 『 』)。
+    auto-complete-cjk-full-width-symbol: 自動替換半角符號為全角符號 (僅限 ，、； 符號)。

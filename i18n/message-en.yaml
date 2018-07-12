@@ -1,0 +1,368 @@
+menu:
+  main:
+    group-app: ${defaults.base.name}
+    about: About ${defaults.base.name}
+    preferences: Preferences
+    services: Services
+    hide: Hide ${defaults.base.name}
+    hideothers: Hide Others
+    unhide: Show All
+    quit.darwin: Quit ${defaults.base.name}
+    quit.win32: Exit All Windows
+    group-file: File
+    new-file: New Document
+    new-file-from-clipboard: New Document from Clipboard
+    new-folder: New Folder
+    group-new-library: New Library
+    new-library: Library
+    new-library-from-external-folder.darwin: Link to External Folder (iCloud, Dropbox etc.)...
+    new-library-from-external-folder.win32: Link to External Folder (OneDrive, Dropbox etc.)...
+    new-library-from-blog: Link to Blog Project Folder (Jekyll, Hexo etc.)...
+    new-library-from-book: Link to Book Project Folder (GitBook)...
+    open-tab-in-new-window: Open in New Window
+    take-snapshot: Take a Snapshot
+    restore: Restore to Last Opened
+    statistics: Statistics...
+    close-current-tab: Close
+    new-window: New Window
+    close: Close Window
+    open-external-file: Open External Document
+    new-external-file: New External Document
+    clear-recent: Clear Recent
+    import: Import...
+    export: Export...
+    group-edit: Edit
+    undo: Undo
+    redo: Redo
+    cut: Cut
+    copy: Copy
+    paste: Paste
+    paste-as-text: Paste as Plain Text
+    paste-from-wechat-subscription-post: Paste from WeChat Subscription Post (*)
+    copy-as-html: Copy as HTML
+    copy-as-plain-text: Copy as Plain Text
+    copy-as-wechat-subscription-post: Copy as WeChat Subscription Post
+    select-all: Select All
+    find: Find
+    find-files: Find in Files
+    find-next: Find Next
+    find-previous: Find Previous
+    go-line: Go to Line...
+    go-previous-line: Go to Previous Line (*)
+    move-line-up: Move Lines Up
+    move-line-down: Move Lines Down
+    delete-line: Delete Lines
+    toggle-bookmark: Toggle Bookmark (*)
+    go-and-delete-previous-bookmark: Go and Delete Previous Bookmark (*)
+    go-previous-bookmark: Go Previous Bookmark (*)
+    go-next-bookmark: Go Next Bookmark (*)
+    new-file-selected-text: New Document by Selected Text (*)
+    split-file-current-position: Split Document at Current Position (*)
+    group-format: Format
+    strong: Bold
+    emphasis: Italic
+    underline: Underline
+    strikethrough: Strikethrough
+    mark: Mark
+    code: Inline Code
+    heading1: Heading 1
+    heading2: Heading 2
+    heading3: Heading 3
+    heading4: Heading 4
+    auto-heading: Auto Heading (Alt+Enter)
+    clear-heading: Clear Heading
+    indent: Increase Indent or Heading Level (Tab)
+    reserve-indent: Decrease Indent or Heading Level (Shift+Tab)
+    link: Link
+    image: Image
+    list-item: List Item
+    ordered-list-item: Ordered List Item
+    task-item: Task Item
+    change-task-item-state: Change Task Item State
+    clear-format: Clear Formats
+    beautify: Beautify Document
+    group-insert: Insert
+    insert-link: Link
+    insert-media: Image
+    insert-task-list: Task List
+    insert-footnote: Footnote
+    toc: Table of Contents
+    hr: Horizontal Line
+    blockquote: Quotation
+    insert-table: Table
+    insert-chart: Chart
+    insert-code: Code Block
+    insert-equation: LaTeX Math
+    group-view: View
+    toggle-library: Toggle Library
+    toggle-document-list: Toggle Document List
+    toggle-toolbar: Toggle Toolbar
+    toggle-outline: Toggle Outline
+    toggle-instant-view: Toogle Instant View
+    toggle-read-mode: Toogle Read Mode (*)
+    toggle-preview: Toogle Preview
+    toggle-slides: Toogle Slides
+    toggle-history: Toogle History
+    toggle-presentation: Play Presentation
+    quick-open: Show Quick Open Panel
+    command-palette: Show Command Palette
+    increase-font-size: Increase Font Size
+    decrease-font-size: Decrease Font Size
+    reset-font-size: Reset Font Size
+    toggle-distraction-free-mode: Toggle Distraction-Free Mode
+    toggle-fullscreen: Toggle Full Screen
+    group-window: Window
+    previous-tab: Show Previous Tab
+    next-tab: Show Next Tab
+    tab1: Show Tab 1
+    tab2: Show Tab 2
+    tab3: Show Tab 3
+    tab4: Show Tab 4
+    minimize: Minimize
+    zoom: Zoom
+    front: Bring All to Front
+    previous-window: Show Previous Window (*)
+    next-window: Show Next Window (*)
+    group-help: Help
+    manual: Manual
+    feedback: Feedback
+    website: Offical Website
+    group-developer: Developer
+    devel-reload: Reload Window
+    devel-toggle-devtools: Toggle Developer Tools
+    devel-open-library: Open Library Folder
+    devel-open-configuration: Open Configuration Folder
+    devel-open-cache: Open Cache Folder
+context:
+  layout:
+    toggle-library: Toggle Library
+    toggle-document-list: Toggle Document List
+    toggle-fullscreen: Toggle Full Screen
+  new-file:
+    new-file: New Document
+    new-file-from-clipboard: New Document from Clipboard
+    new-external-file: New External Document
+  format:
+    strong: Bold
+    emphasis: Italic
+    underline: Underline
+    strikethrough: Strikethrough
+    mark: Highlight
+    code: Inline Code
+    heading1: Heading 1
+    heading2: Heading 2
+    heading3: Heading 3
+    heading4: Heading 4
+    auto-heading: Auto Heading
+    clear-heading: Clear Heading
+    link: Link
+    image: Image
+    list-item: List Item
+    ordered-list-item: Ordered List Item
+    task-item: Task Item
+    change-task-item-state: Change Task Item State
+    clear-format: Clear Formats
+    beautify: Beautify Document
+  insert:
+    insert-task-list: Task List
+    insert-footnote: Footnote
+    toc: Table of Contents
+    hr: Horizontal Line
+    blockquote: Quotation
+    insert-chart: Chart
+    insert-code: Code Block
+    insert-equation: LaTeX Math
+  table:
+    insert-table: Insert Table
+    insert-column: Insert Column (*)
+    move-column-to-the-left: Move Column to the Left (*)
+    move-column-to-the-right: Move Columns to the Right (*)
+    insert-row: Insert Row (*)
+    delete-column: Delete Column (*)
+    delete-table: Delete Table (*)
+    auto-adjust-columns-width: Auto Adjust Columns Width (*)
+  view:
+    toggle-preview: Toggle Preview
+    toggle-slides: Toggle Slides
+    toggle-read-mode: Toggle Read Mode
+    toggle-presentation: Toggle Presentation
+    toggle-outline: Toggle Outline
+    toggle-instant-view: Toggle Instant View
+  library:
+    new-folder: New Folder
+    rename-file: Rename
+    delete-file: Delete
+    import: Import...
+    reveal-file.darwin: Reveal in Finder
+    reveal-file.win32: Reveal in File Manager
+  create-library:
+    new-library: Library
+    new-library-from-external-folder.darwin: Link to External Folder (iCloud, Dropbox etc.)...
+    new-library-from-external-folder.win32: Link to External Folder (OneDrive, Dropbox etc.)...
+    new-library-from-blog: Link to Blog Project Folder (Jekyll, Hexo etc.)...
+    new-library-from-book: Link to Book Project Folder (GitBook)...
+  file:
+    new-file: New Document
+    new-file-from-clipboard: New Document from Clipboard
+    open-file-in-new-window: Open in New Window
+    pin: Toggle Pin
+    tag: Set Tag
+    note: Set Note
+    due: Set Due
+    creation-time: Set Creation Time (*)
+    merge-file: Merge (*)
+    cut-file: Cut
+    copy-file: Copy
+    paste-file: Paste (*)
+    select-all-files: Select All
+    rename-file: Rename
+    delete-file: Delete
+    export-file: Export...
+    reveal-file.darwin: Reveal in Finder
+    reveal-file.win32: Reveal in File Manager
+  file-sort:
+    sort-by-name: Name
+    sort-by-creation-time: Creation Time
+    sort-by-last-modified: Last Modified
+    order-ascending: Ascending
+    order-descending: Descending
+  tab:
+    close-selected-tab: Close
+    close-other-tabs: Close Others
+    close-tabs-to-the-right: Close to the Right
+    close-all-tabs: Close All
+    open-selected-tab-in-new-window: Open in New Window
+    reveal-document: Reveal in Library (*)
+  outline:
+    move-section-up: Move Up
+    move-section-down: Move Down
+    left-shift-section: Left Shift
+    right-shift-section: Right Shift
+    delete-section: Delete
+  editor:
+    undo: Undo
+    redo: Redo
+    cut: Cut
+    copy: Copy
+    paste: Paste
+    paste-as-text: Paste as Plain Text
+    copy-as-html: Copy as HTML
+    copy-as-plain-text: Copy as Plain Text
+    copy-as-wechat-subscription-post: Copy as WeChat Subscription Post
+    select-all: Select All
+    new-file-selected-text: New Document by Selected Text (*)
+    split-file-current-position: Split Document at Current Position (*)
+  keymap:
+    keymap-off: Turn Off
+    keymap-vim: Vim key binding
+    keymap-emacs: Emacs key binding
+  resource:
+    cut-resource: Cut
+    copy-resource: Copy
+    paste-resource: Paste (*)
+    paste-resource-from-clipboard: Paste from Clipboard... (*)
+    select-all-resources: Select All
+    rename-resource: Rename
+    delete-resource: Delete
+    open-resource.darwin: Open in Preview
+    open-resource.win32: Open with External Application
+    reveal-resource.darwin: Reveal in Finder
+    reveal-resource.win32: Reveal in File Manager
+  textbox:
+    undo: Undo
+    redo: Redo
+    cut: Cut
+    copy: Copy
+    paste: Paste
+    select-all: Select All
+  dock:
+    new-window: New Window
+  tray:
+    save-clipboard-content-to-inbox: Save Clipboard Contents to Inbox
+    open-window: Show Main Window
+    quit.darwin: Quit
+    quit.win32: Exit
+main:
+  common:
+    unregister: UNREGISTERED
+  toolbar:
+    layout: Layout
+    quick-open: Quick Open
+    new-file: New
+    open-external-file: Open
+    find: Search
+    strong: Bold
+    emphasis: Italic
+    underline: Underline
+    format: Format
+    insert: Insert
+    insert-link: Link
+    insert-media: Image
+    insert-table: Table
+    view: View
+    toggle-read-mode: Read Mode(*)
+    toggle-history: History
+    toggle-presentation: Presentation
+    export: Export
+    preferences.darwin: Preferences
+    preferences.win32: Settings
+    menu: Menu
+  library:
+    new-library: Add Library
+  find:
+    case-sensitive: Case Sensitive
+    whole-word: Whole Word
+    regular-expression: Regular Expression
+    find: Find
+    previous: Previous
+    replace: Replace
+    replace-all: Replace All
+  status:
+    upgrade: Upgrade to Full Version
+  settings:
+    general: General
+    editor: Editor
+    markdown: Markdown
+    localization: Localization
+    group-appearance: Appearance
+    enable-transparent-background: Enable transparent background when possible (require restart application).
+    show-all-toolbar-button: Show all toolbar buttons.
+    show-toolbar-text: Show toolbar button text.
+    group-function: Functions
+    enable-tabs: Enable tabs.
+    enable-tray-icon: Show tray icon.
+    enable-spell-check: Enable spelling check.
+    reopen-last-documents-on-startup: Reopen the last edited documents at startup.
+    group-syntax: Syntax
+    syntax-enable-ins: Enable underline (++underline++).
+    syntax-enable-mark: Enable highlight (==highlight==).
+    syntax-enable-footnote: Enable footnote ([^footnote-name]).
+    syntax-enable-tasklist: Enable task list (* [x] task item).
+    syntax-enable-equation: Enable LaTeX math ($$E = mc^2$$).
+    syntax-enable-single-dollar-equation: Enable inline equation by single dollar mark ($y = x + 1$).
+    syntax-enable-chart: Enable chart (@chart directive).
+    syntax-enable-toc: Enable TOC (@toc directive).
+    toc-level-from: Heading level from
+    toc-level-to: to
+    group-performance: Performance
+    enable-chart-rendering-in-instant-view: Enable chart rendering in Instant View.
+    enable-equation-rendering-in-instant-view: Enable LaTeX math equation rendering in Instant View.
+    enable-markdown-syntax-check: Enable Markdown syntax check.
+    group-font: Fonts
+    editor-font: Editor font (*)
+    view-font: View font (*)
+    font-size: Font size (*)
+    line-height: Line height (*)
+    group-typing: Typing
+    vertical-center-cursor: Vertical center cursor.
+    always-show-line-number: Always show line number.
+    auto-complete-markdown-symbol: Auto complete Markdown symbols.
+    auto-complete-smart-quote: Auto replace quotes with smart quotes (“ ” and ‘ ’).
+    group-key-binding: Key Bindings
+    enable-emacs-key-binding: Enable base Emacs key bindings. (Currently available only on macOS)
+    enable-vim-key-binding: Enable base Vim key bindings. (*)
+    group-cjk-auto-complete: CJK Auto-complete
+    auto-complete-cjk-surround-space: Auto insert space between CJK and english letters (include numbers).
+    auto-complete-cjk-corner-bracket: Auto replace quotes with corner bracket (「 」and 『 』).
+    auto-complete-cjk-full-width-symbol: Auto replace half width symbols with full width (only ，、；).
+
