@@ -1,23 +1,25 @@
 menu:
   main:
     group-app: ${defaults.base.name}
-    about: About ${defaults.base.name}
+    about.win32: About...
+    about.darwin: About ${defaults.base.name}
     preferences: Preferences
     services: Services
     hide: Hide ${defaults.base.name}
     hideothers: Hide Others
     unhide: Show All
-    quit.darwin: Quit ${defaults.base.name}
     quit.win32: Exit All Windows
+    quit.darwin: Quit ${defaults.base.name}
     group-file: File
     new-file: New Document
     new-file-from-clipboard: New Document from Clipboard
     new-folder: New Folder
     group-new-library: New Library
     new-library: Library
-    new-library-from-external-folder.darwin: Link to External Folder (iCloud, Dropbox etc.)...
-    new-library-from-external-folder.win32: Link to External Folder (OneDrive, Dropbox etc.)...
-    new-library-from-blog: Link to Blog Project Folder (Jekyll, Hexo etc.)...
+    new-library-from-external-folder.win32: Link to External Folder (OneDrive, Dropbox, Git etc.)...
+    new-library-from-external-folder.darwin: Link to External Folder (iCloud, Dropbox, Git etc.)...
+    new-library-from-external-folder.linux: Link to External Folder (Dropbox, Git etc.)...
+    new-library-from-blog: Link to Static Blog Project Folder (Jekyll, Hexo etc.)...
     new-library-from-book: Link to Book Project Folder (GitBook)...
     open-tab-in-new-window: Open in New Window
     take-snapshot: Take a Snapshot
@@ -51,6 +53,9 @@ menu:
     go-previous-line: Go to Previous Line (*)
     move-line-up: Move Lines Up
     move-line-down: Move Lines Down
+    new-line: New Line (Ctrl+Enter)
+    cut-line: Cut Lines
+    copy-line: Copy Lines
     delete-line: Delete Lines
     toggle-bookmark: Toggle Bookmark (*)
     go-and-delete-previous-bookmark: Go and Delete Previous Bookmark (*)
@@ -78,7 +83,10 @@ menu:
     list-item: List Item
     ordered-list-item: Ordered List Item
     task-item: Task Item
+    sort-list: Sort List (*)
+    invert-list: Invert List (*)
     change-task-item-state: Change Task Item State
+    sort-task-list-state: Sort Task List State (*)
     clear-format: Clear Formats
     beautify: Beautify Document
     group-insert: Insert
@@ -193,13 +201,15 @@ context:
     rename-file: Rename
     delete-file: Delete
     import: Import...
+    property: Property...(*)
+    reveal-file.win32: Open in File Explorer
     reveal-file.darwin: Reveal in Finder
-    reveal-file.win32: Reveal in File Manager
   create-library:
     new-library: Library
-    new-library-from-external-folder.darwin: Link to External Folder (iCloud, Dropbox etc.)...
-    new-library-from-external-folder.win32: Link to External Folder (OneDrive, Dropbox etc.)...
-    new-library-from-blog: Link to Blog Project Folder (Jekyll, Hexo etc.)...
+    new-library-from-external-folder.win32: Link to External Folder (OneDrive, Dropbox, Git etc.)...
+    new-library-from-external-folder.darwin: Link to External Folder (iCloud, Dropbox, Git etc.)...
+    new-library-from-external-folder.linux: Link to External Folder (Dropbox, Git etc.)...
+    new-library-from-blog: Link to Static Blog Project Folder (Jekyll, Hexo etc.)...
     new-library-from-book: Link to Book Project Folder (GitBook)...
   file:
     new-file: New Document
@@ -209,7 +219,7 @@ context:
     tag: Set Tag
     note: Set Note
     due: Set Due
-    creation-time: Set Creation Time (*)
+    creation-time: Set Creation Time
     merge-file: Merge (*)
     cut-file: Cut
     copy-file: Copy
@@ -218,8 +228,8 @@ context:
     rename-file: Rename
     delete-file: Delete
     export-file: Export...
+    reveal-file.win32: Open in File Explorer
     reveal-file.darwin: Reveal in Finder
-    reveal-file.win32: Reveal in File Manager
   file-sort:
     sort-by-name: Name
     sort-by-creation-time: Creation Time
@@ -250,8 +260,27 @@ context:
     copy-as-plain-text: Copy as Plain Text
     copy-as-wechat-subscription-post: Copy as WeChat Subscription Post
     select-all: Select All
+    cut-line: Cut Lines
+    copy-line: Copy Lines
+    delete-line: Delete Lines
     new-file-selected-text: New Document by Selected Text (*)
     split-file-current-position: Split Document at Current Position (*)
+    add-to-dictionary: Add to dictionary
+    remove-from-dictionary: Remove from dictionary
+    edit-footnote: Edit Footnote
+    edit-task-list: Edit Task List
+    change-task-item-state: Change Task Item State
+    sort-task-list-state: Sort Task List State (*)
+    sort-list: Sort List (*)
+    invert-list: Invert List (*)
+    edit-code-block: Edit Code Block
+    beautify-code: Beautify Code (*)
+    edit-equation: Edit Equation
+    edit-image: Edit Image
+    edit-link: Edit Link
+    edit-table: Edit Table
+    auto-adjust-columns-width: Auto Adjust Columns Width (*)
+    
   keymap:
     keymap-off: Turn Off
     keymap-vim: Vim key binding
@@ -264,10 +293,10 @@ context:
     select-all-resources: Select All
     rename-resource: Rename
     delete-resource: Delete
-    open-resource.darwin: Open in Preview
     open-resource.win32: Open with External Application
+    open-resource.darwin: Open in Preview
+    reveal-resource.win32: Open in File Explorer
     reveal-resource.darwin: Reveal in Finder
-    reveal-resource.win32: Reveal in File Manager
   textbox:
     undo: Undo
     redo: Redo
@@ -280,8 +309,8 @@ context:
   tray:
     save-clipboard-content-to-inbox: Save Clipboard Contents to Inbox
     open-window: Show Main Window
-    quit.darwin: Quit
     quit.win32: Exit
+    quit.darwin: Quit
 main:
   common:
     unregister: UNREGISTERED
@@ -294,6 +323,7 @@ main:
     strong: Bold
     emphasis: Italic
     underline: Underline
+    mark: Highlight
     format: Format
     insert: Insert
     insert-link: Link
@@ -304,25 +334,162 @@ main:
     toggle-history: History
     toggle-presentation: Presentation
     export: Export
-    preferences.darwin: Preferences
     preferences.win32: Settings
+    preferences.darwin: Preferences
     menu: Menu
   library:
     new-library: Add Library
+  file:
+    sort-by: Sort by
+    sort-by-name: Name
+    sort-by-creation-time: Creation Time
+    sort-by-last-modified: Last Modified
+    sort-by-custom: Custom
+    sort-by-other: Other
+    pinned: Pinned
+    no-recent-title: No Recent Documents
+    no-recent-description: Recently edited documents will be listed here.
+    no-inbox-title: No Documents
+    no-inbox-description: Temporary documents can be placed here, documents created by the global shortcut will automatically be placed in this folder also.
+    no-external-title: No External Documents
+    no-external-description: The external document being edited will be listed here.
+    no-match-title: No Match Documents
+    no-match-description: Documents that match the current query will be listed here.
+    no-document-title: No Documents
+    no-document-description: No documents in this folder, select another folder or try to create a new document.
+  status:
+    upgrade: Upgrade to Full Version
+    words: Words
+    goals: Goals
+    elapse: Writing in
+    line: Line
+    column: Column
+    hour: h
+    minute: m
+panel:
+  preview:
+    document-style: Document Style
+    hide: Hide
+    show: Show
+    export: Export
+    close: Close
+  slide:
+    slide-style: Slide Style
+    hide: Hide
+    show: Show
+    close: Close
+  history:
+    version: Version
+    rollback: Rollback
+    replay: Replay
+    stop: Stop
+    close: Close
   find:
     case-sensitive: Case Sensitive
     whole-word: Whole Word
     regular-expression: Regular Expression
+    find-placeholder: Find
+    replace-placeholder: Replace
     find: Find
     previous: Previous
     replace: Replace
     replace-all: Replace All
-  status:
-    upgrade: Upgrade to Full Version
+  template:
+    title: New Document
+    description: Select a template to create new document.
+    create: Create
+    close: Close
+  media:
+    title: Insert Image
+    title-update: Update Image
+    title-document: Document
+    title-images: Images
+    title-library: Library
+    title-resources: Resources
+    no-image-message-title: No Images
+    no-image-message-content: Click the "add" button below to add a picture, or drag and drop a picture here.
+    add: Add
+    paste: Paste from Clipboard (*)
+    insert: Insert
+    update: Update
+    close: Close
+  link:
+    title: Insert Link
+    title-update: Update Link
+    link-to: Link to
+    link-url: External Web Page.
+    link-document: Document or Section.
+    link-url-text: Title
+    link-url-text-placeholder: Optional
+    link-url-target: URL
+    link-document-text: Title
+    link-document-text-placeholder: Optional
+    link-document-name: Document
+    link-document-section: Section
+    insert: Insert
+    update: Update
+    close: Close
+  footnote:
+    title: Insert Footnote
+    title-update: Edit Footnote
+    name: Name
+    name-placeholder: Name for this footnote
+    content-placeholder: Content
+    insert: Insert
+    update: Update
+    close: Close
+  code:
+    title: Insert Code Block
+    title-update: Update Code Block
+    type: Type
+    type-general: General
+    beautify: Beautify Code
+    insert: Insert
+    update: Update
+    close: Close
+  table:
+    title: Insert Table
+    title-update: Update Table
+    insert: Insert (*)
+    update: Update (*)
+    close: Close
+  chart:
+    title: Insert Chart
+    title-update: Update Chart
+    type: Type
+    type-column: Column
+    type-line: Line
+    type-pie: Pie
+    type-bar: Bar
+    type-area: Area
+    insert: Insert (*)
+    update: Update (*)
+    close: Close
+  diagram:
+    title: Insert Diagram
+    insert: Insert (*)
+    update: Update (*)
+    close: Close
+  equation:
+    title: Insert LaTeX Math
+    title-update: Update LaTeX Math
+    cheatsheet: Cheat Sheet
+    inline-equation: Insert as inline
+    insert: Insert
+    update: Update
+    close: Close
+  task-list:
+    title: Insert Task List
+    title-update: Update Task List
+    insert: Insert (*)
+    update: Update (*)
+    close: Close
   settings:
     general: General
     editor: Editor
     markdown: Markdown
+    professional: Professional
+    spellcheck: Spell Check
     localization: Localization
     group-appearance: Appearance
     enable-transparent-background: Enable transparent background when possible (require restart application).
@@ -330,10 +497,15 @@ main:
     show-toolbar-text: Show toolbar button text.
     group-function: Functions
     enable-tabs: Enable tabs.
+    enable-save-clipboard-content-global-shortcut: Enable save clipboard content global shortcut.
     enable-tray-icon: Show tray icon.
-    enable-spell-check: Enable spelling check.
     reopen-last-documents-on-startup: Reopen the last edited documents at startup.
+    always-new-window-when-open-document-externally.win32: Always create new window when open document from File Explorer.
+    always-new-window-when-open-document-externally.darwin: Always create new window when open document from Finder.
+    always-new-window-when-open-document-externally.linux: Always create new window when open document from File Manager.
+    exit-application-when-all-windows-are-closed: Exit application when all windows are closed.
     group-syntax: Syntax
+    syntax-enable-html: Enable HTML tags.
     syntax-enable-ins: Enable underline (++underline++).
     syntax-enable-mark: Enable highlight (==highlight==).
     syntax-enable-footnote: Enable footnote ([^footnote-name]).
@@ -347,7 +519,6 @@ main:
     group-performance: Performance
     enable-chart-rendering-in-instant-view: Enable chart rendering in Instant View.
     enable-equation-rendering-in-instant-view: Enable LaTeX math equation rendering in Instant View.
-    enable-markdown-syntax-check: Enable Markdown syntax check.
     group-font: Fonts
     editor-font: Editor font (*)
     view-font: View font (*)
@@ -355,14 +526,259 @@ main:
     line-height: Line height (*)
     group-typing: Typing
     vertical-center-cursor: Vertical center cursor.
-    always-show-line-number: Always show line number.
-    auto-complete-markdown-symbol: Auto complete Markdown symbols.
+    auto-complete-format-by-symbol-key: Enable format selected text by symbol keys (* _ + ~ = and `).
+    auto-complete-markdown-symbol: Auto complete Markdown symbol pair.
     auto-complete-smart-quote: Auto replace quotes with smart quotes (“ ” and ‘ ’).
+    group-assist: Assist
+    enable-show-line-number: Enable show line number.
+    always-show-line-number: Always show line number.
+    enable-markdown-syntax-check: Enable Markdown syntax check.
     group-key-binding: Key Bindings
     enable-emacs-key-binding: Enable base Emacs key bindings. (Currently available only on macOS)
     enable-vim-key-binding: Enable base Vim key bindings. (*)
+    active-key-binding-when-tab-created: Active key bindings when new tab created. (*)
+    enable-spell-check: Enable spelling check.
+    group-edit-language: Editing Language
+    dictionary-active: Active
+    dictionary-language: Language
+    group-user-dictionary: User Dictionary
+    remove-word: Remove (*)
+    clear-user-dictionary: Clear (*)
+    backup-user-dictionary: Backup (*)
+    import-user-dictionary: Import (*)
     group-cjk-auto-complete: CJK Auto-complete
     auto-complete-cjk-surround-space: Auto insert space between CJK and english letters (include numbers).
     auto-complete-cjk-corner-bracket: Auto replace quotes with corner bracket (「 」and 『 』).
     auto-complete-cjk-full-width-symbol: Auto replace half width symbols with full width (only ，、；).
+    language-system: System
+    language-setup-notice: Require restart application.
+    close: Close
+  export:
+    title: Export Document
+    type: Type
+    type-image: Image (*)
+    page-size: Page Size
+    page-orientation: Orientation
+    page-orientation-portrait: Portrait
+    page-orientation-landscape: Landscape
+    pdf-open-file-when-finished: Open PDF when finished
+    docx-show-file-when-finished: Show file when finished
+    html-format: HTML format
+    html-format-standard: Standard (*)
+    html-format-blog: WordPress and other Blog Post
+    html-format-wechat: WeChat Subscription Post
+    html-include-resource: Include images (*)
+    html-show-file-when-finished: Show file when finished
+    html-export-to-clipboard: Export to Clipboard
+    markdown-include-resource: Include images (*)
+    markdown-show-file-when-finished: Show file when finished
+    markdown-export-to-clipboard: Export to Clipboard
+    textbundle-include-resource: Include images (*)
+    textbundle-compress: Compress bundle (*)
+    textbundle-show-file-when-finished: Show file when finished
+    image-width: Image Width
+    image-width-narrow: Narrow (420 px)
+    image-width-normal: Normal (595 px)
+    image-width-wide: Wide (842 px)
+    image-width-thumbnail: Thumbnail (240 px)
+    image-format: Format
+    image-page-range: Pages
+    image-page-range-first: First Page
+    image-page-range-all: All (*)
+    image-open-when-finished: Open Image when finished
+    export: Export
+    close: Close
+  add-folder:
+    title: Add external folder
+    description: Add external folder to libraries.
+    folder-description: The folder you choose will become a new library, and you can select a folder located within iCloud Drive, OneDrive, Google Drive, Dropbox or Git for synchronizing documents between your devices.
+    choose: Choose Folder
+    close: Close
+  add-blog:
+    title: Add Static Blog Project
+    description: Add an existing static blog or site project to the library.
+    jekyll-description: A simple, blog-aware, static site generator. Jekyll also is the engine behind [GitHub Pages](https://pages.github.com/).
+    hexo-description: A fast, simple & powerful blog framework.
+    hugo-description: A fast and modern static website engine, it is optimized for speed.
+    message-require-file: Please choose the project folder that contains file '%s'.
+    choose: Choose Folder
+    close: Close
+  add-book:
+    title: Add Book Project
+    description: Add an existing book project to the library.
+    gitbook-description: Write book in Markdown format. output book as a website or an eBook in PDF, EPUB format.
+    message-require-file: Please choose the project folder that contains file '%s'.
+    choose: Choose Folder
+    close: Close
+  take-snapshot:
+    title: Take a snapshot for "%s"
+    message-placeholder: Write a message for this revision
+    create: Create
+    close: Close
+  about:
+    update-message-checking: Checking updates...
+    update-message-check-failed: Check failed, please visit the official website to get the latest version.
+    update-message-unavailable: This is the latest version.
+    update-message-available: A new version is available.
+    update-message-link: Get update now
+    update-check: Check for Updates
+    brief: Efficient, cross-platform Markdown text editor.
+    author: |-
+      This software was developed by @ivarptr, any questions or suggestions are welcome to send
+      to me, also welcome to follow my Twitter to get the latest development information.
+      Thank you for choosing Yu Writer Pro!
+    site-offical-title: Offical Site
+    site-feedback-title: Feedback
+    site-twitter-title: Twitter
+    site-email-title: Email
+    site-translate-title: Translation
+    tab-terms: Terms
+    tab-register: Register
+    tab-activate: Activate
+    terms-trial: |-
+      ### Free Trial
 
+      Yu Writer Pro is a proprietary software that each device (or each computer) 
+      needs to purchase a license to use.
+
+      The beta version allows you a free trial for **personal use** before registering, 
+      most of function are available during the trial period, and there is no time
+      limited, so you don't have to worry about the software won't run or the 
+      document will be locked after a period.
+
+      In addition, the software build the document library based on the local file 
+      system, and using Markdown format (a plain text format) to write document, 
+      you can manage or edit documents using the system's own file manager and any 
+      text editor when you no longer use this software.
+    terms-purchase: |-
+      ### When to Register
+      
+      Please consider register this software if you like this software, 
+      or feel that the software is helpful to you, or you are using it in the 
+      enterprise or business environment.
+    terms-service: |-
+      ### After Registration
+
+      * All features are available, the function with a lock icon will become available 
+        after registration. (Note, The function marked with asterisk * is not yet completed, 
+        unable to use even if you registered);
+      * More UI themes, document styles, and slide styles are available;
+      * Supports customized themes, templates, document styles, and slide styles;
+      * License is valid for the 0.x beta and 1.x stable version;
+    terms-notice: |-
+      Note, Please ensure that the software has been updated to the latest version 
+      before registering and ensure that it is downloaded from the official website.
+    terms-action: |-
+      Click the "Register" tab above to start.
+    register-method: |-
+      ### Registration Method
+      
+      Because the registration module has not yet completed, the current method of 
+      activation is "offline verification", registration 
+      module will be converted to "online verification" when complete, 
+      it can "register once, activate multiple devices", or revoke or transfer authorization.
+      The registered users will automatically upgrade to the new method.
+    register-price: |-
+      ### Price
+
+      * Each license is ￥100 RMB yuan (or $19.9 US dollar);
+      * Offer A, For personal use, the 2nd and above licenses each one is ¥35 (or $6.9); (*)
+      * Offer B, Students and teachers can purchase the education license, each 
+        license is ¥50 (or 9.9); (**)
+      
+      - - -
+
+      * (*) Users are identified by email address, that is, using the same email 
+        to register will be treated as the same user.
+      * (**) Use your personal Email address in your school when purchasing the 
+        education license (that is, the Email address must ends with "edu" or "edu.xx").
+    register-payment: |-
+      ### Payment
+      
+      Scan the following QR code to transfer if you have _WeChat Pay_ or _Alipay_.
+
+    register-payment-alt: |-
+      You can also pay with Paypal, the author's account is the same as Email 
+      address above.
+      
+    register-disclaimer: |-
+      ### Disclaimer
+      
+      Registration only means the license, the author does not provide any functional 
+      commitment or warranty, nor provide any form of technical services, advice and 
+      support, the author is not responsible for any loss caused by this software.
+    register-machine-code-title: The unique machine code of this device
+    register-email: |-
+      ### Send Email
+
+      After the transfer is successful, please send the last 8 digits of the 
+      "Transfer Number" of the transfer record (named "Order Number" in Alipay),
+      and the unique machine code above, to the author's Email.
+
+      If you pay with Paypal, you only need to send the unique machine code.
+      
+      Email title write "Buy Yu Writer Pro".
+      
+      When you are done, click the "Activate" tab above to the next step.
+
+    active-notice: |-
+      If you have completed payment and sent the Email, please be patient 
+      and wait for the author to send the registration code to your inbox. 
+      
+      If you haven't received it for more than a week, please contact the author.
+    active-code-title: Enter registration code
+    active-message-failed: Verification failed, please check and re-enter the registration code, if it is still invalid, please contact the author.
+    active-message-verified: The current copy of the software has been registered, thank you for your purchase!
+    active-verify: Verify
+    active-backup: Backup License File (*)
+    active-import: Import License File (*)
+    close: Close
+  tag:
+    input-placeholder: Enter tags
+    hints: Multiple tags could be separated by commas, e.g. "foo, bar, draft".
+    update: Update
+    close: Close
+  note:
+    input-placeholder: Write notes about this document
+    update: Update
+    close: Close
+  due:
+    title: Set date to complete this document
+    after: After
+    days: days.
+    remove: Remove Due
+    update: Update
+    close: Close
+  creation-time:
+    title: Set document creation time
+    include-time: Include time
+    clear: Clear
+    update: Update
+    close: Close
+  statistics:
+    goal-title: Words
+    goal-sub-title: Goals
+    word-title: Words
+    character-title: Characters
+    elapse-title: Writing Elapse
+    read-time-title: Read Time
+    speech-time-title: Speech Time
+    read-cn-time-title: Read Time
+    read-cn-time-sub-title: Chinese
+    speech-cn-time-title: Speech Time
+    speech-cn-time-sub-title: Chinese
+    hour: h
+    minute: m
+    second: s
+  goto-line:
+    message: Enter line number, use colon to enter column number, e.g. "100" or "100:33".
+    go: Go
+  math-symbols-cheat-sheet:
+    all-symbols: All Symbols
+    all-symbols-cn: All Symbols (Chinese)
+    wiki: Wiki
+    close: Close
+  command-palette:
+    input-placeholder: Enter command
+  quick-open:
+    input-placeholder: Enter document name

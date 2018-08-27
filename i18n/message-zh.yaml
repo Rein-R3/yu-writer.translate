@@ -1,23 +1,26 @@
 menu:
   main:
     group-app: ${defaults.base.name}
-    about: 关于 ${defaults.base.name}
-    preferences: 偏好设置...
+    about.win32: 关于...
+    about.darwin: 关于 ${defaults.base.name}
+    preferences.win32: 设置...
+    preferences.darwin: 偏好设置...
     services: 服务
     hide: 隐藏 ${defaults.base.name}
     hideothers: 隐藏其他
     unhide: 全部显示
+    quit.win32: 关闭所有窗口
     quit.darwin: 退出 ${defaults.base.name}
-    quit: 关闭所有窗口
     group-file: 文件
     new-file: 新建文档
     new-file-from-clipboard: 从剪贴板新建文档
     new-folder: 新建文件夹
     group-new-library: 新建库
     new-library: 文档库
-    new-library-from-external-folder.darwin: 链接到外部文件夹 (比如 iCloud, Dropbox 等)...
-    new-library-from-external-folder.win32: 链接到外部文件夹 (比如 OneDrive, Dropbox 等)...
-    new-library-from-blog: 链接到博客项目文件夹 (比如 Jekyll, Hexo 等)...
+    new-library-from-external-folder.win32: 链接到外部文件夹 (比如 OneDrive, Dropbox, Git 等)...
+    new-library-from-external-folder.darwin: 链接到外部文件夹 (比如 iCloud, Dropbox, Git 等)...
+    new-library-from-external-folder.linux: 链接到外部文件夹 (比如 Dropbox, Git 等)...
+    new-library-from-blog: 链接到静态博客项目文件夹 (比如 Jekyll, Hexo 等)...
     new-library-from-book: 链接到电子书项目文件夹 (比如 GitBook)...
     open-tab-in-new-window: 在新窗口中打开
     take-snapshot: 保存快照
@@ -55,7 +58,10 @@ menu:
     go-previous-line: 返回上一行 (*)
     move-line-up: 向上移动一行
     move-line-down: 向下移动一行
-    delete-line: 删除选定行
+    new-line: 新行 (Ctrl+Enter)
+    cut-line: 剪切行
+    copy-line: 复制行
+    delete-line: 删除行
     toggle-bookmark: 添加/删除书签 (*)
     go-and-delete-previous-bookmark: 跳到并删除最后一个书签 (*)
     go-previous-bookmark: 跳到上一个书签 (*)
@@ -67,7 +73,7 @@ menu:
     emphasis: 斜体
     underline: 下划线
     strikethrough: 删除线
-    mark: 高亮
+    mark: 加亮
     code: 行内代码
     heading1: 标题 1
     heading2: 标题 2
@@ -82,7 +88,10 @@ menu:
     list-item: 列表项目
     ordered-list-item: 有序列表项目
     task-item: 任务列表项目
-    change-task-item-state: 改变任务列表项目完成状态
+    sort-list: 排序列表 (*)
+    invert-list: 反转列表次序 (*)
+    change-task-item-state: 改变任务列表项目的完成状态
+    sort-task-list-state: 排序任务列表的完成状态 (*)
     clear-format: 清除格式
     beautify: 美化文档
     group-insert: 插入
@@ -97,8 +106,8 @@ menu:
     insert-chart: 图表
     insert-code: 代码块
     insert-equation: LaTeX 数学公式
+    group-view.win32: 查看
     group-view.darwin: 显示
-    group-view: 查看
     toggle-library: 显示/隐藏 文档库
     toggle-document-list: 显示/隐藏 文档列表
     toggle-toolbar: 显示/隐藏 工具栏
@@ -152,7 +161,7 @@ context:
     emphasis: 斜体
     underline: 下划线
     strikethrough: 删除线
-    mark: 高亮
+    mark: 加亮
     code: 行内代码
     heading1: 标题 1
     heading2: 标题 2
@@ -193,21 +202,22 @@ context:
     toggle-presentation: 播放幻灯片
     toggle-outline: 显示/隐藏 大纲
     toggle-instant-view: 显示/隐藏 即时预览
-    
   library:
     new-folder: 新建文件夹
-    rename-file.darwin: 重新命名
     rename-file.win32: 重命名
-    delete-file.darwin: 移到废纸篓
+    rename-file.darwin: 重新命名
     delete-file.win32: 移到回收站
+    delete-file.darwin: 移到废纸篓
     import: 导入...
+    property: 属性...(*)
+    reveal-file.win32: 在文件资源管理器中显示
     reveal-file.darwin: 在访达中显示
-    reveal-file.win32: 在资源管理器中显示
   create-library:
     new-library: 文档库
-    new-library-from-external-folder.darwin: 链接到外部文件夹 (比如 iCloud, Dropbox 等)...
-    new-library-from-external-folder.win32: 链接到外部文件夹 (比如 OneDrive, Dropbox 等)...
-    new-library-from-blog: 链接到博客项目文件夹 (比如 Jekyll, Hexo 等)...
+    new-library-from-external-folder.win32: 链接到外部文件夹 (比如 OneDrive, Dropbox, Git 等)...
+    new-library-from-external-folder.darwin: 链接到外部文件夹 (比如 iCloud, Dropbox, Git 等)...
+    new-library-from-external-folder.linux: 链接到外部文件夹 (比如 Dropbox, Git 等)...
+    new-library-from-blog: 链接到静态博客项目文件夹 (比如 Jekyll, Hexo 等)...
     new-library-from-book: 链接到电子书项目文件夹 (比如 GitBook)...
   file:
     new-file: 新建文档
@@ -217,20 +227,20 @@ context:
     tag: 设置标签
     note: 设置内容摘要
     due: 设置截稿日期
-    creation-time: 设置创建时间 (*)
+    creation-time: 设置创建时间
     merge-file: 合并 (*)
     cut-file: 剪切
     copy-file.win32: 复制
     copy-file.darwin: 拷贝
     paste-file: 粘贴 (*)
     select-all-files: 全选
-    rename-file.darwin: 重新命名
     rename-file.win32: 重命名
-    delete-file.darwin: 移到废纸篓
+    rename-file.darwin: 重新命名
     delete-file.win32: 移到回收站
+    delete-file.darwin: 移到废纸篓
     export-file: 导出...
+    reveal-file.win32: 在文件资源管理器中显示
     reveal-file.darwin: 在访达中显示
-    reveal-file.win32: 在资源管理器中显示
   file-sort:
     sort-by-name: 名称
     sort-by-creation-time: 创建时间
@@ -265,16 +275,34 @@ context:
     copy-as-wechat-subscription-post.win32: 复制为微信订阅号文章格式
     copy-as-wechat-subscription-post.darwin: 拷贝为微信订阅号文章格式
     select-all: 全选
+    cut-line: 剪切行
+    copy-line: 复制行
+    delete-line: 删除行
     new-file-selected-text: 以选定的内容新建文档 (*)
     split-file-current-position: 在当前位置分割文档 (*)
+    add-to-dictionary: 添加到词典
+    remove-from-dictionary: 从词典中删除
+    edit-footnote: 编辑脚注
+    edit-task-list: 编辑任务列表
+    change-task-item-state: 改变任务列表项目完成状态
+    sort-task-list-state: 排序任务列表的完成状态 (*)
+    sort-list: 排序列表 (*)
+    invert-list: 反转列表次序 (*)
+    edit-code-block: 编辑代码块
+    beautify-code: 美化代码 (*)
+    edit-equation: 编辑 LaTeX 数学公式
+    edit-image: 编辑图片
+    edit-link: 编辑链接
+    edit-table: 编辑表格
+    auto-adjust-columns-width: 自动调整列宽 (*)
   keymap:
     keymap-off: 关闭
     keymap-vim: 启用 Vim 按键绑定
     keymap-emacs: 启用 Emacs 按键绑定
   resource:
     cut-resource: 剪切
-    copy-resource.darwin: 拷贝
     copy-resource.win32: 复制
+    copy-resource.darwin: 拷贝
     paste-resource: 粘贴 (*)
     paste-resource-from-clipboard: 粘贴自剪贴板... (*)
     select-all-resources: 全选
@@ -282,10 +310,10 @@ context:
     rename-resource.darwin: 重新命名
     delete-resource.win32: 移到回收站
     delete-resource.darwin: 移到废纸篓
-    open-resource.darwin: 使用预览打开
     open-resource.win32: 使用外部应用程序打开
+    open-resource.darwin: 使用预览打开
+    reveal-resource.win32: 在文件资源管理器中显示
     reveal-resource.darwin: 在访达中显示
-    reveal-resource.win32: 在资源管理器中显示
   textbox:
     undo: 撤销
     redo: 重做
@@ -312,6 +340,7 @@ main:
     strong: 粗体
     emphasis: 斜体
     underline: 下划线
+    mark: 加亮
     format: 格式
     insert: 插入
     insert-link: 链接
@@ -322,38 +351,180 @@ main:
     toggle-history: 历史记录
     toggle-presentation: 播放幻灯片
     export: 导出
-    preferences.darwin: 偏好设置
     preferences.win32: 设置
+    preferences.darwin: 偏好设置
     menu: 菜单
   library:
     new-library: 添加文档库
+  file:
+    sort-by: 排序
+    sort-by-name: 名称
+    sort-by-creation-time: 创建时间
+    sort-by-last-modified: 修改时间
+    sort-by-custom: 自定义
+    sort-by-other: 其他
+    pinned: 置顶
+    no-recent-title: 没有最近文档
+    no-recent-description: 最近打开的文档会在这里列出。
+    no-inbox-title: 没有文档
+    no-inbox-description: 临时的零碎的文档可以放置在这里，另外使用全局快捷键创建的文档也会放置在这里。
+    no-external-title: 没有外部文档
+    no-external-description: 正在编辑的外部文档会在这里列出。
+    no-match-title: 没有符合条件的文档
+    no-match-description: 符合当前文件夹查询条件的文档会在这里列出。
+    no-document-title: 没有文档
+    no-document-description: 这个文件夹里没有文档，尝试新建一个文档吧，或者看看其他文件夹。
+  status:
+    upgrade: 升级为全功能版本
+    words: 字数
+    goals: 目标
+    elapse: 用时
+    line: 行
+    column: 列
+    hour: 时
+    minute: 分
+panel:
+  preview:
+    document-style: 文档样式
+    hide: 隐藏
+    show: 显示
+    export: 导出
+    close: 关闭
+  slide:
+    slide-style: 幻灯片样式
+    hide: 隐藏
+    show: 显示
+    close: 关闭
+  history:
+    version: 版本
+    rollback: 回滚
+    replay: 重播
+    stop: 停止
+    close: 关闭
   find:
     case-sensitive: 区分大小写
     whole-word: 全字匹配
     regular-expression: 使用正则表达式
+    find-placeholder: 查找
+    replace-placeholder: 替换
     find: 查找
     previous: 查找上一处
     replace: 替换
     replace-all: 全部替换
-  status:
-    upgrade: 升级为全功能版本
+  template:
+    title: 新建文档
+    description: 请选择一个模板用于新建文档。
+    create: 创建
+    close: 关闭
+  media:
+    title: 插入图片
+    title-update: 更新图片
+    title-document: 文档
+    title-images: 的图片
+    title-library: 文档库
+    title-resources: 的资源
+    no-image-message-title: 找不到图片
+    no-image-message-content: 点击下方的 “添加” 按钮以添加图片，或者将图片拖拉进来。
+    add: 添加
+    paste: 从剪贴板粘贴 (*)
+    insert: 插入
+    update: 更新
+    close: 关闭
+  link:
+    title: 插入链接
+    title-update: 更新链接
+    link-to: 链接到
+    link-url: 外部网页
+    link-document: 文档或者章节
+    link-url-text: 标题
+    link-url-text-placeholder: 可留空
+    link-url-target: URL
+    link-document-text: 标题
+    link-document-text-placeholder: 可留空
+    link-document-name: 文档
+    link-document-section: 章节
+    insert: 插入
+    update: 更新
+    close: 关闭
+  footnote:
+    title: 插入脚注
+    title-update: 更新脚注
+    name: 名称
+    name-placeholder: 该脚注的名称
+    content-placeholder: 内容
+    insert: 插入
+    update: 更新
+    close: 关闭
+  code:
+    title: 插入代码块
+    title-update: 更新代码块
+    type: 类型
+    type-general: 一般类型
+    beautify: 美化代码
+    insert: 插入
+    update: 更新
+    close: 关闭
+  table:
+    title: 插入表格
+    title-update: 更新表格
+    insert: 插入 (*)
+    update: 更新 (*)
+    close: 关闭
+  chart:
+    title: 插入图表
+    title-update: 更新图表
+    type: 类型
+    type-column: 柱形图
+    type-line: 折线图
+    type-pie: 饼图
+    type-bar: 条形图
+    type-area: 面积图
+    insert: 插入 (*)
+    update: 更新 (*)
+    close: 关闭
+  diagram:
+    title: 插入图
+    insert: 插入 (*)
+    update: 更新 (*)
+    close: 关闭
+  equation:
+    title: 插入 LaTeX 数学公式
+    title-update: 更新 LaTeX 数学公式
+    cheatsheet: 速查表
+    inline-equation: 显示为行内公式
+    insert: 插入
+    update: 更新
+    close: 关闭
+  task-list:
+    title: 插入任务列表
+    title-update: 更新任务列表
+    insert: 插入 (*)
+    update: 更新 (*)
+    close: 关闭
   settings:
     general: 通用
     editor: 编辑器
     markdown: Markdown
+    professional: 专业用户
+    spellcheck: 拼写检查
     localization: 本地化
     group-appearance: 外观
-    enable-transparent-background: 启用半透明背景 (需要重启应用程序)。
+    enable-transparent-background: 尽可能地启用半透明背景 (需要重启应用程序)。
     show-all-toolbar-button: 显示所有工具栏按钮。
     show-toolbar-text: 显示工具栏按钮标题。
     group-function: 功能
     enable-tabs: 启用标签页。
+    enable-save-clipboard-content-global-shortcut: 启用保存剪贴板内容的全局快捷键。
     enable-tray-icon: 显示托盘图标。
-    enable-spell-check: 启用拼写检查。
     reopen-last-documents-on-startup: 下次启动应用程序时自动打开最后编辑的文档。
+    always-new-window-when-open-document-externally.win32: 从文件资源管理器打开文档时总在新窗口中打开。
+    always-new-window-when-open-document-externally.darwin: 从访达打开文档时总在新窗口中打开。
+    always-new-window-when-open-document-externally.linux: 从文件管理器打开文档时总在新窗口中打开。
+    exit-application-when-all-windows-are-closed: 当所有窗口关闭时退出应用程序。
     group-syntax: 语法
+    syntax-enable-html: 允许解析 HTML 标签。
     syntax-enable-ins: 启用下划线 (如 ++underline++)。
-    syntax-enable-mark: 启用高亮 (如 ==highlight==)。
+    syntax-enable-mark: 启用加亮 (如 ==highlight==)。
     syntax-enable-footnote: 启用脚注 (如 [^footnote-name])。
     syntax-enable-tasklist: 启用任务列表 (如 * [x] task item)。
     syntax-enable-equation: 启用 LaTeX 数学公式 (如 $$E = mc^2$$)。
@@ -365,7 +536,6 @@ main:
     group-performance: 性能
     enable-chart-rendering-in-instant-view: 允许在即时预览中显示图表。
     enable-equation-rendering-in-instant-view: 允许在即时预览中显示 LaTeX 数学公式。
-    enable-markdown-syntax-check: 允许 Markdown 语法检查。
     group-font: 字体
     editor-font: 编辑器字体 (*)
     view-font: 查看字体 (*)
@@ -373,13 +543,252 @@ main:
     line-height: 行高 (*)
     group-typing: 录入
     vertical-center-cursor: 垂直居中光标。
-    always-show-line-number: 总是显示行号。
-    auto-complete-markdown-symbol: 自动补完 Markdown 符号。
+    auto-complete-format-by-symbol-key: 允许使用符号键 (* _ + ~ = 和 `) 设置选中的文本的格式。
+    auto-complete-markdown-symbol: 自动补完 Markdown 符号对。
     auto-complete-smart-quote: 自动替换引号为智能引号 (即 “ ” 和 ‘ ’)。
+    group-assist: 辅助
+    enable-show-line-number: 允许显示行号。
+    always-show-line-number: 总是显示行号。
+    enable-markdown-syntax-check: 允许 Markdown 语法检查。
     group-key-binding: 按键绑定
-    enable-emacs-key-binding: 启用基本的 Emacs 按键绑定 (暂时只支持 macOS 系统)。
-    enable-vim-key-binding: 启用基本的 Vim 按键绑定。(*)
+    enable-emacs-key-binding: 允许基本的 Emacs 按键绑定 (暂时只支持 macOS 系统)。
+    enable-vim-key-binding: 允许基本的 Vim 按键绑定。(*)
+    active-key-binding-when-tab-created: 当新标签页创建时，自动进入绑定按键状态。(*)
+    enable-spell-check: 启用拼写检查。
+    group-edit-language: 编辑语言
+    dictionary-active: 启用
+    dictionary-language: 语言
+    group-user-dictionary: 用户字典
+    remove-word: 移除 (*)
+    clear-user-dictionary: 清空 (*)
+    backup-user-dictionary: 备份 (*)
+    import-user-dictionary: 导入 (*)
     group-cjk-auto-complete: 中日韩自动补完
     auto-complete-cjk-surround-space: 自动在中日韩文字及英文数字间插入空格。
     auto-complete-cjk-corner-bracket: 自动替换引号为直角引号 (即 「 」和 『 』)。
     auto-complete-cjk-full-width-symbol: 自动替换半角符号为全角符号 (仅限 ，、； 符号)。
+    language-system: 系统
+    language-setup-notice: 需要重启应用程序。
+    close: 关闭
+  export:
+    title: 导出文档
+    type: 格式
+    type-image: 图片 (*)
+    page-size: 纸张大小
+    page-orientation: 方向
+    page-orientation-portrait: 纵向
+    page-orientation-landscape: 横向
+    pdf-open-file-when-finished: 完成后打开 PDF 文档
+    docx-show-file-when-finished: 完成后显示 Docx 文件所在位置
+    html-format: HTML 格式
+    html-format-standard: 标准 (*)
+    html-format-blog: WordPress 以及其他博客文章格式
+    html-format-wechat: 微信公众号文章格式
+    html-include-resource: 包含图片 (*)
+    html-show-file-when-finished: 完成后显示 HTML 文件所在位置
+    html-export-to-clipboard: 导出到剪贴板
+    markdown-include-resource: 包含图片 (*)
+    markdown-show-file-when-finished:  完成后显示 Markdown 文件所在位置
+    markdown-export-to-clipboard: 导出到剪贴板
+    textbundle-include-resource: 包含图片 (*)
+    textbundle-compress: 压缩 (*)
+    textbundle-show-file-when-finished:  完成后显示 TextBundle 文件所在位置
+    image-width: 图片大小
+    image-width-narrow: 小 (420 px)
+    image-width-normal: 普通 (595 px)
+    image-width-wide: 大 (842 px)
+    image-width-thumbnail: 缩略图 (240 px)
+    image-format: 格式
+    image-page-range: 页面
+    image-page-range-first: 第一页
+    image-page-range-all: 所以页面 (*)
+    image-open-when-finished: 完成后打开图片
+    export: 导出
+    close: 关闭
+  add-folder:
+    title: 添加外部文件夹
+    description: 添加外部文件夹到文档库
+    folder-description: 你选择的文件夹将会成为一个新的文档库，不妨考虑选择位于 iCloud Drive，OneDrive，Google Drive，Dropbox 或者 Git 项目之内的文件夹，这样你就可以享用它们带来的文档同步便利了。
+    choose: 选择文件夹
+    close: 关闭
+  add-blog:
+    title: 添加静态博客项目
+    description: 添加一个已有的静态博客项目文件夹到库。
+    jekyll-description: 一个简单的静态站点生成工具，Jekyll 同时也是 [GitHub Pages](https://pages.github.com/) 背后的引擎。
+    hexo-description: 一个快速、简单、强大的博客框架。
+    hugo-description: 一个快速、现代的静态站点引擎，为速度而优化。
+    message-require-file: 请选择包含有项目文件 '%s' 的文件夹。
+    choose: 选择文件夹
+    close: 关闭
+  add-book:
+    title: 添加电子书项目
+    description: 添加一个已有的电子书项目到库。
+    gitbook-description: 一个使用 Markdown 格式书写的电子书制作工具，可以生成在线网页、PDF 以及 EPUB 等格式.
+    message-require-file: 请选择包含有项目文件 '%s' 的文件夹.
+    choose: 选择文件夹
+    close: 关闭
+  take-snapshot:
+    title: 为文档 "%s" 添加一个历史版本
+    message-placeholder: 简单描述一下该历史版本
+    create: 创建
+    close: 关闭
+  about:
+    update-message-checking: 正在检查更新...
+    update-message-check-failed: 检查失败，请访问官方网站获取最新版本情况。
+    update-message-unavailable: 当前是最新的版本。
+    update-message-available: 发现新版本。
+    update-message-link: 获取新版本
+    update-check: 检查新版本
+    brief: 高效的跨平台 Markdown 文本编辑器。
+    author: |-
+      本软件由 ivarptr 个人开发及维护，任何问题或建议都欢迎通过 Email 向我反馈，
+      同时欢迎在推特关注我以获得有关本软件的最新动态。感谢你使用 Yu Writer Pro，
+      感谢你的支持！
+    site-offical-title: 官方网站
+    site-feedback-title: 意见反馈
+    site-twitter-title: Twitter
+    site-email-title: Email
+    site-translate-title: 翻译计划
+    tab-terms: 使用条款
+    tab-register: 注册
+    tab-activate: 激活
+    terms-trial: |-
+      ### 试用本软件
+
+      Yu Writer Pro 是收费软件，每一个设备（即每台计算机）需要购买一份授权（以下
+      简称 “注册”）方可使用。
+
+      Beta 版（即测试版）允许 **个人用途** 的用户在注册之前免费试用，
+      试用期间大部分功能都可用，且试用期不设时限，你无需担心过一段时间之后软件
+      无法运行，或者文档被锁住而无法编辑。
+
+      另外，本软件使用本地文件夹作为文档库，以及使用开放的 Markdown 格式
+      （一种纯文本格式）储存文档，如果你以后决定不再使用本软件了，也可以使用系统本身的
+      文件资源管理器以及任何其他文本编辑器来管理或编辑，作者希望你可以
+      愉快地、无后顾之忧地试用本软件。
+    terms-purchase: |-
+      ### 何时需要注册？
+
+      如果你喜欢本软件，或者觉得本软件对你有帮助，或者非常认可作者的努力，或者认为
+      作者很帅 😅，或者是在企业或商业环境中使用，或者以上都不是，只是有一股莫名想
+      花钱的冲动 😂。那就请考虑一下注册本软件吧。
+    terms-service: |-
+      ### 注册之后
+
+      * 能完整体验所有功能，软件中标有锁头图标的功能在注册后即可使用
+      （注：标有 * 号的功能尚未完成，注册后也暂时无法使用，以后会陆续补完。）；
+      * 能使用更多的 UI 主题、文档样式和幻灯片样式；
+      * 能使用自定义的主题、模版、文档样式和幻灯片样式；
+      * 授权可用于 0.x 的测试版，同样也可用于将来发布的 1.x 的正式版；
+      * 有了你的注册支持，作者就能愉快地、持续地修复、改进、更新软件，软件会变得越来
+        越好用。（咦！好像这个才是重点？才才才不是呢 😋）
+      * 能下载并使用内部测试版，能更快地体验到作者正在开发中的新功能；
+    terms-notice: |-
+      注意：在注册前请确保本软件已更新至最新版，并尽量在官方网站下载。
+    terms-action: |-
+      点击上面的 “注册” 标签开始注册咯。
+    register-method: |-
+      ### 注册方式
+
+      因为注册模块尚未完善，目前采用的是 “非联网的单机验证注册码” 的激活方式，一个注册码只能
+      激活一台设备。当注册模块完善后会转为
+      联网激活方式，到时可以 “一次注册，激活多台设备”，也可以撤销、转移授权。
+      已注册的用户届时会自动升级为新的激活方式。
+    register-price: |-
+      ### 价格
+
+      * 每份授权人民币 ¥100 元；
+      * 优惠 A：个人用途每用户第 2 份及往后每份授权均为 ¥35 元；（注 1）
+      * 优惠 B：学生及教师可购买针对教育用户的授权，每份授权均为 ¥50；（注 3）
+
+      - - -
+
+      * 注 1：用户以 Email 地址为标识，即使用同一个 Email 注册将视为同一个用户。
+      * 注 2：学生及教师购买时请使用属于你学校的个人 Email 地址（即必须以 edu.xx 如 edu.cn、
+        或 edu 结尾的邮箱）发送邮件，没有的话也可以随便拍拍自己的学生证/牌或教师证/牌
+        发过来即可。
+    register-payment: |-
+      ### 支付
+
+      使用微信或者支付宝扫描下面的二维码转账。
+    register-payment-alt: |-
+      没有微信支付和支付宝的用户也可以使用 Paypal 转账到作者的账号（账号地址同上面的
+      联系 Email 地址）。
+      
+    register-disclaimer: |-
+      ### 免责声明
+
+      注册仅代表着购买使用授权，作者并不提供任何功能上的承诺或保证，也不提供任何形式
+      的技术服务、咨询和支持，因本软件引起的任何损失作者概不负责。
+    register-machine-code-title: 当前设备的唯一机器码
+    register-email: |-
+      ### 发送邮件
+
+      转账成功后，请把转账记录的 “转账单号” （支付宝里称为 “订单号”）最后 8 位数字
+      以及上面的机器码发送到作者的 Email（见上面的联系方式），如果使用 Paypal 转账，
+      则只需发送机器码。
+      
+      邮件标题请写上 “购买 Yu Writer Pro”。
+
+      完成这步后点击上面的 “激活” 标签进行下一步。
+    active-notice: |-
+      如果你已经完成支付并发出邮件，请耐心等待作者发送注册码到你的邮箱。
+
+      因为是人手操作，加上作者是在闲暇时开发和维护本软件，所以慢的话有可能要一两天
+      （碰上假期可能要等上三五天）之后才会收到注册码。如果超过一周都没收到请联系作者。
+    active-code-title: 输入注册码
+    active-message-failed: 注册码验证失败，请检查并重新填写注册码，如尝试多次仍无效请联系作者。
+    active-message-verified: 当前软件已注册，谢谢你的支持！
+    active-verify: 验证注册码
+    active-backup: 备份授权文件 (*)
+    active-import: 导入授权文件 (*)
+    close: 关闭
+  tag:
+    input-placeholder: 输入标签
+    hints: 多个标签使用逗号分隔，比如 "foo, bar, draft"。
+    update: 更新
+    close: 关闭
+  note:
+    input-placeholder: 文档的摘要信息
+    update: 更新
+    close: 关闭
+  due:
+    title: 设置文档的截稿日期
+    after: 在
+    days: 天之后。
+    remove: 清除
+    update: 更新
+    close: 关闭
+  creation-time:
+    title: 设置文档的创建日期
+    include-time: 包含时间
+    clear: 清除
+    update: 更新
+    close: 关闭
+  statistics:
+    goal-title: 字数
+    goal-sub-title: 写作目标
+    word-title: 字数
+    character-title: 字符
+    elapse-title: 写作用时
+    read-time-title: 阅读时间
+    speech-time-title: 朗读时间
+    read-cn-time-title: 阅读时间
+    read-cn-time-sub-title: 中文
+    speech-cn-time-title: 朗读时间
+    speech-cn-time-sub-title: 中文
+    hour: 时
+    minute: 分
+    second: 秒
+  goto-line:
+    message: 输入行号，可以使用冒号来指定列数，比如 "100" 或者 "100:33"。
+    go: 转到
+  math-symbols-cheat-sheet:
+    all-symbols: 全部符号
+    all-symbols-cn: 全部符号（中文版）
+    wiki: Wiki
+    close: 关闭
+  command-palette:
+    input-placeholder: 输入命令
+  quick-open:
+    input-placeholder: 输入文档名称
